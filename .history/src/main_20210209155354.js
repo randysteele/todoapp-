@@ -3,15 +3,7 @@ const backend_url = "http://localhost:3000/tasks"
 
 document.addEventListener('DOMContentLoaded', () => {
   getTasks();
-
-
-const createTaskForm = document.getElementById("create-task-form");
-
-  createTaskForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-  })
-});
-
+})
 
 function getTasks(){
   fetch(backend_url)
@@ -26,4 +18,6 @@ function getTasks(){
       // debugger
       document.getElementById("task-container").innerHTML += taskMarkup
     })
-  })}
+  })
+}
+

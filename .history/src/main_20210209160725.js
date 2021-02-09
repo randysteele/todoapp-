@@ -6,12 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const createTaskForm = document.getElementById("create-task-form");
-
-  createTaskForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+   e.preventDefault();
   })
-});
-
+  
 
 function getTasks(){
   fetch(backend_url)
@@ -26,4 +23,6 @@ function getTasks(){
       // debugger
       document.getElementById("task-container").innerHTML += taskMarkup
     })
-  })}
+  })
+}
+

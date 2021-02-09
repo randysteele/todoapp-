@@ -123,6 +123,10 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 var backend_url = "http://localhost:3000/tasks";
 document.addEventListener('DOMContentLoaded', function () {
   getTasks();
+  var createTaskForm = document.getElementById("create-task-form");
+  createTaskForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
 });
 
 function getTasks() {
@@ -130,19 +134,12 @@ function getTasks() {
     return response.json();
   }).then(function (list) {
     list.forEach(function (task) {
-      var taskMarkup = "\n      <div> ".concat(task.id, "</div>\n      <h3> ").concat(task.content, "</h3>\n      <div> ").concat(task.category, "</div>\n      "); // debugger
+      var taskMarkup = "\n      <div> ".concat(task.id, ".</div>\n      <h3> Task: ").concat(task.content, "</h3>\n      <div> Category: ").concat(task.category, "</div>\n      "); // debugger
 
       document.getElementById("task-container").innerHTML += taskMarkup;
     });
   });
-} // function counter() {
-//   let seconds = 0;
-//   setInterval(() => {
-//     seconds += 1;
-//     document.getElementById('app').innerHTML = `<p>You have been here for ${seconds} seconds.</p>`;
-//   }, 1000);
-// }
-// counter();
+}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -171,7 +168,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50079" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50891" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
