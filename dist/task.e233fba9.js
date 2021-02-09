@@ -124,25 +124,26 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Tasks = /*#__PURE__*/function () {
-  function Tasks() {
-    _classCallCheck(this, Tasks);
+var Task = /*#__PURE__*/function () {
+  function Task(task) {
+    _classCallCheck(this, Task);
 
-    this.id = Task.id;
-    this.content = Task.content;
-    this.category = Task.category;
-    this.date = Task.date;
+    this.id = task.id;
+    this.content = task.content;
+    this.category = task.category;
+    this.date = task.date;
     Task.all.push(this);
+    debugger;
   }
 
-  _createClass(Tasks, [{
+  _createClass(Task, [{
     key: "renderTaskCard",
     value: function renderTaskCard() {
       return "\n        <div data-id=".concat(this.id, ">\n        <div data-id=").concat(this.content, ">\n        <div data-id=").concat(this.category, ">\n        <div data-id=").concat(this.date, ">\n        </div></div></div></div>\n        ");
     }
   }]);
 
-  return Tasks;
+  return Task;
 }();
 
 Task.all = [];
@@ -174,7 +175,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55052" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50079" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

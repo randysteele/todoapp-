@@ -13,7 +13,6 @@ function getTasks(){
       const taskMarkup = `
       <div> ${task.id}</div>
       <h3> ${task.content}</h3>
-      <div> ${task.category}</div>
       `
       // debugger
       document.getElementById("task-container").innerHTML += taskMarkup

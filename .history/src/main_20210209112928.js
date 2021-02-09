@@ -10,13 +10,9 @@ function getTasks(){
   .then(response => response.json())
   .then(list => {
     list.forEach(task => {
-      const taskMarkup = `
-      <div> ${task.id}</div>
-      <h3> ${task.content}</h3>
-      <div> ${task.category}</div>
-      `
-      // debugger
-      document.getElementById("task-container").innerHTML += taskMarkup
+      let newTask = new Task
+      console.log(newTask)
+      debugger
     })
   })
 }

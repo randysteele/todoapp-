@@ -1,10 +1,10 @@
-class Task {
+class Task{
 
     constructor(task){
-        this.id = task.id
-        this.content = task.content
-        this.category = task.category
-        this.date = task.date
+        this.id = Task.id
+        this.content = Task.content
+        this.category = Task.category
+        this.date = Task.date
         Task.all.push(this);
         debugger
     }

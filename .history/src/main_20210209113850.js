@@ -11,10 +11,8 @@ function getTasks(){
   .then(list => {
     list.forEach(task => {
       const taskMarkup = `
-      <div> ${task.id}</div>
-      <h3> ${task.content}</h3>
-      <div> ${task.category}</div>
-      `
+      <div ${task.id}</div>
+      <h3 ${task.content}</h3>`
       // debugger
       document.getElementById("task-container").innerHTML += taskMarkup
     })
