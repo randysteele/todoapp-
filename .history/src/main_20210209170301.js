@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
   getTasks();
 
 
-const createTaskForm = document.getElementById("create-task-form")
-  createTaskForm.addEventListener("submit", (e) => createFormHandler(e))
+const createTaskForm = document.getElementById("create-task-form");
+
+  createTaskForm.addEventListener("submit", (e) => {
     e.preventDefault();
   })
-
+});
 
 
 function getTasks(){
@@ -21,6 +22,7 @@ function getTasks(){
       <div> ${task.id}.</div>
       <h3> Task: ${task.content}</h3>
       <div> Category: ${task.category}</div>
+      <input id="create-button" type ="submit" name="submit">
       `
       // debugger
       document.getElementById("task-container").innerHTML += taskMarkup

@@ -125,8 +125,9 @@ document.addEventListener('DOMContentLoaded', function () {
   getTasks();
   var createTaskForm = document.getElementById("create-task-form");
   createTaskForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+    return createFormHandler(e);
   });
+  e.preventDefault();
 });
 
 function getTasks() {
