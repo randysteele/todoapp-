@@ -120,6 +120,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"main.js":[function(require,module,exports) {
 'use strict';
 
+var backend_url = "http://localhost:3000/tasks";
+document.addEventListener('DOMContentLoaded', function () {
+  getTasks();
+});
+
+function getTasks() {
+  fetch(backend_url).then(function (response) {
+    return response.json();
+  }).then(function (list) {
+    list.forEach(function (task) {
+      debugger;
+    });
+  });
+}
+
 function counter() {
   var seconds = 0;
   setInterval(function () {
@@ -157,7 +172,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49746" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55052" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

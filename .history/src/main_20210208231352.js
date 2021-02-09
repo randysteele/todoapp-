@@ -2,14 +2,14 @@
 const backend_url = "http://localhost:3000/tasks"
 
 document.addEventListener('DOMContentLoaded', () => {
-  getTasks();
+
 })
 
-function getTasks(){
+function getTodos(){
   fetch(backend_url)
   .then(response => response.json())
   .then(list => {
-    list.forEach(task => {
+    list.data.forEach(task => {
       debugger
     })
   })
